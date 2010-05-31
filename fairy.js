@@ -98,7 +98,18 @@ fairyEnvironment.Fairy.prototype = {
             _ = c.getContext && c.getContext('2d'),
             color = this.color;
             
-        if (!_) { return null; }
+        if (!_) {
+            // Just for IE :D
+            var d = document.createElement('div');
+            d.style.fontSize = '12px';
+            d.style.fontFamily = 'monospace';
+            d.style.position = 'absolute';
+            d.style.color = '#FFF';
+            d.style.background = '#000';
+            d.innerHTML = 'IE SUCKS';
+            this.width = 48;
+            return d;
+        }
         
         c.width = this.width;
         c.height = this.height;
@@ -136,8 +147,8 @@ fairyEnvironment.Fairy.prototype = {
         
         this.limitSpeed();
         
-        this.dom.style.left = (this.x += this.dX) + 'px';
-        this.dom.style.top = (this.y += this.dY) + 'px';
+        this.dom.style.left = ~~(this.x += this.dX) + 'px';
+        this.dom.style.top = ~~(this.y += this.dY) + 'px';
         
         this.pulse();
         
