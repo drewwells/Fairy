@@ -9,6 +9,6 @@
         </style>
 	</head>
 	<body>
-		<a href="">Load some fairies</a>
+		<a href="javascript:(function(){function g(){var h=document.body.appendChild(document.createElement('div')),a=document.documentElement,b=document.body,f,d=function(){f=window.innerHeight||a.clientHeight||b.clientHeight;fairyEnvironment.bounds.right=Math.max(a.clientWidth,a.offsetWidth);c()},c=function(){fairyEnvironment.bounds.top=Math.max(b.scrollTop,a.scrollTop);fairyEnvironment.bounds.left=Math.max(b.scrollLeft,a.scrollLeft);fairyEnvironment.bounds.bottom=fairyEnvironment.bounds.top+f};d();if(window.addEventListener){window.addEventListener('resize', d,false);window.addEventListener('scroll',c,false)}else{window.attachEvent('onresize',d);window.attachEvent('onscroll',c)}fairyEnvironment.spawn(25,function(){if(this.dom){h.appendChild(this.dom);this.start()}})}var e=document.documentElement.appendChild(document.createElement('script')),i=setInterval(function(){if(window.fairyEnvironment&&fairyEnvironment.Fairy){clearInterval(i);e.parentNode.removeChild(e);g()}},50);e.src='http://github.com/jamespadolsey/Fairy/raw/master/fairy.js'})();">Load some fairies</a>
 	</body>
 </html>
