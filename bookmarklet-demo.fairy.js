@@ -27,8 +27,8 @@
                 scroll();
             },
             scroll = function() {
-                fairyEnvironment.bounds.top = Math.max(body.scrollTop, docEl.scrollTop);
-                fairyEnvironment.bounds.left = Math.max(body.scrollLeft, docEl.scrollLeft);
+                fairyEnvironment.bounds.top = Math.max(window.pageYOffset, body.scrollTop, docEl.scrollTop);
+                fairyEnvironment.bounds.left = Math.max(window.pageXOffset, body.scrollLeft, docEl.scrollLeft);
                 fairyEnvironment.bounds.bottom = fairyEnvironment.bounds.top + winHeight;
             };
         
