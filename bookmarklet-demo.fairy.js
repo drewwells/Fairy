@@ -9,7 +9,7 @@
             }
         }, 50);
     
-    s.src = 'fairy.js';
+    s.src = 'http://github.com/jamespadolsey/Fairy/raw/master/fairy.js';
 
     function init() {
     

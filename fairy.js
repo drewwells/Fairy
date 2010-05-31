@@ -22,7 +22,7 @@ fairyEnvironment = new function() {
     this.spawn = function(amount, postCreation, config) {
         var ret = [];
         for (var i = -1, amount = ~~amount; ++i < amount;) {
-            postCreation && postCreation.call(ret[i] = new Fairy(config));
+            postCreation && postCreation.call(ret[i] = new fairyEnvironment.Fairy(config));
         }
         return ret;
     };
