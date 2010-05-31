@@ -1,6 +1,6 @@
 # Fairy!
 
-**[See a demonstration](http://jsbin.com/urope3)**
+**[See a demonstration](http://jamespadolsey.github.com/Fairy/)**
 
 ***Fairy*** is a stand-alone (no dependencies) JavaScript class for generating fairy-like pulsating thingies. It's almost entirely pointless... but very fun. It's best when used as a bookmarklet.
 
