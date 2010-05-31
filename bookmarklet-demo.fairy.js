@@ -1,4 +1,8 @@
 (function(){
+    
+    if (window.fairyEnvironment && fairyEnvironment.Fairy) {
+        return init();
+    }
 
     var s = document.documentElement.appendChild(document.createElement('script')),
         t = setInterval(function(){
