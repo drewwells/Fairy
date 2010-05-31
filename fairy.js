@@ -20,11 +20,17 @@ fairyEnvironment = new function() {
     };
     
     this.spawn = function(amount, postCreation, config) {
-        var ret = [];
-        for (var i = -1, amount = ~~amount; ++i < amount;) {
+        
+        var ret = [], i = -1;
+        
+        amount = ~~amount
+        
+        while (++i < amount) {
             postCreation && postCreation.call(ret[i] = new fairyEnvironment.Fairy(config));
         }
+        
         return ret;
+    
     };
     
 };
@@ -65,8 +71,8 @@ fairyEnvironment.Fairy = function Fairy(config) {
     ];
     
     // Spawn the fairy somewhere random
-    this.y = Math.random() * this.bounds.bottom;
-    this.x = Math.random() * this.bounds.right;
+    this.y = Math.random() * (this.bounds.bottom - this.height);
+    this.x = Math.random() * (this.bounds.right - this.width);
     
     // Build the canvas
     // Note, this doesn't HAVE to be a canvas - it could just be a regular DOM element
