@@ -78,6 +78,9 @@ fairyEnvironment.Fairy = function Fairy(config) {
     // Note, this doesn't HAVE to be a canvas - it could just be a regular DOM element
     this.dom = this.build();
     
+    // set initial position
+    if (this.dom) this.step(); 
+    
 }
 
 fairyEnvironment.Fairy.prototype = {
