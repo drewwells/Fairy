@@ -5,7 +5,7 @@
  */
 
 // Singleton FairyEnvironment
-fairyEnvironment = new function() {
+var fairyEnvironment = new function() {
     
     this.bounds = {
         left: 0,
@@ -81,7 +81,7 @@ fairyEnvironment.Fairy = function Fairy(config) {
     // set initial position
     if (this.dom) this.step(); 
     
-}
+};
 
 fairyEnvironment.Fairy.prototype = {
     
