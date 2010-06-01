@@ -41,8 +41,8 @@ fairyEnvironment.Fairy = function Fairy(config) {
     // Config is optional, defaults apply
     config = config || {};
     
-    this.bounds = fairyEnvironment.bounds;
-    this.speedLimit = fairyEnvironment.speedLimit;
+    var bounds = this.bounds = fairyEnvironment.bounds,
+        speedLimit = this.speedLimit = fairyEnvironment.speedLimit;
     
     this.timer;
     
@@ -55,7 +55,7 @@ fairyEnvironment.Fairy = function Fairy(config) {
     
     // If no speed is specified then genarate a random width between
     // the upper and lower limits specified in FairyEnvironment
-    this.speed = config.speed || Math.random() * (this.speedLimit.high - this.speedLimit.low) + this.speedLimit.low;
+    this.speed = config.speed || Math.random() * (speedLimit.high - speedLimit.low) + speedLimit.low;
     this.dX = 0;
     this.dY = 0;
     
@@ -71,8 +71,8 @@ fairyEnvironment.Fairy = function Fairy(config) {
     ];
     
     // Spawn the fairy somewhere random
-    this.y = Math.random() * (this.bounds.bottom - this.height);
-    this.x = Math.random() * (this.bounds.right - this.width);
+    this.y = Math.random() * (bounds.bottom - this.height - bounds.top) + bounds.top;
+    this.x = Math.random() * (bounds.right - this.width - bounds.left) + bounds.left;
     
     // Build the canvas
     // Note, this doesn't HAVE to be a canvas - it could just be a regular DOM element
